@@ -1,8 +1,11 @@
+// importing dependencies
 const Express = require("express");
 const Post = require("../models/posts");
 const router = Express.Router();
 
 router.use(Express.json()) 
+
+// for handling post requests and pushing it to the MongoDB database
 router.post("/", async (req,res)=>{
     console.log(req.body);
     const post = new Post({
@@ -18,4 +21,5 @@ router.post("/", async (req,res)=>{
     })
 })
 
+// exporting the function
 module.exports = router;

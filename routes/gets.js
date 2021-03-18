@@ -1,12 +1,15 @@
 const Express = require("express");
+const Post = require("../models/posts");
 const router = Express.Router();
 
-router.get("/",(req,res)=>{
-    res.send("Hello there!");
+router.get("/",async (req,res)=>{
+    const posts = await Post.find();
+    res.json(posts);
 })
 
-router.get("/home",(req,res)=>{
-    res.send("Welcome home");
+router.get("/:category",async (req,res)=>{
+    const posts = await Post.find({category: req.params.category});
+    res.json(posts);
 })
 
 module.exports = router;
