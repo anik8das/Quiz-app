@@ -3,11 +3,12 @@ const Express = require("express");
 const Post = require("../models/posts");
 const router = Express.Router();
 
+// using the json middleware for sending the response in a json format
 router.use(Express.json()) 
 
 // for handling post requests and pushing it to the MongoDB database
 router.post("/", async (req,res)=>{
-    console.log(req.body);
+    console.log("Post request for :" + req.body);
     const post = new Post({
         id: req.body.id,
         category: req.body.category,
