@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300&display=swap');
+
+.log{
+    margin:auto;
+    margin-right:0.9%;
+    font-size: 1.6em;
+    font-family: 'Antonio', sans-serif;
+}
+
+.userIcon{
+    border-radius: 50%;
+    width: 4em;
+    border: 0.01em black solid;
+}
